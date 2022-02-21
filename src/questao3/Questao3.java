@@ -8,11 +8,11 @@ import java.util.Arrays;
 public class Questao3 {
 	public static void main(String[] args) {
 		
-	Scanner scanner = new Scanner(System.in);
-	System.out.print("Palavra: ");
-        String palavra = scanner.next();
-        int paresDeAnagramas = 0;
-        scanner.close();
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("Palavra: ");
+		String palavra = scanner.next();
+		int paresDeAnagramas = 0;
+		scanner.close();
 		
 		Map<String, Integer> hashMap = new HashMap<String, Integer>();
 		for (int i = 0; i < palavra.length(); i++) {
