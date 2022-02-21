@@ -12,7 +12,7 @@ public class Questao2 {
         String senhaString = scanner.next();
         scanner.close();
         Senha senha = new Senha(senhaString);
-        System.out.println(senha.qtdMinimaCaracteres());
+        System.out.println(senha.qtdMinimaCaracteresNecessarios());
     }
 
 }

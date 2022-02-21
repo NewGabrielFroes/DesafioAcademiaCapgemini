@@ -56,12 +56,40 @@ public class Senha {
 		 		this.temCaracterEspecial();
     }
 	
-	public List<String> caracteresFaltando() {
+	private List<String> adicionaDigito(List<String> caracteres) {
+		if (!this.temDigito()) {
+			caracteres.add("digito");
+		}
+		return caracteres;
+	}
+	
+	private List<String> adicionaMaiuscula(List<String> caracteres) {
+		if (!this.temMaiuscula()) {
+			caracteres.add("maiuscula");
+		}
+		return caracteres;
+	}
+	
+	private List<String> adicionaMinuscula(List<String> caracteres) {
+		if (!this.temMinuscula()) {
+			caracteres.add("minuscula");
+		}
+		return caracteres;
+	}
+	
+	private List<String> adicionaEspecial(List<String> caracteres) {
+		if (!this.temCaracterEspecial()) {
+			caracteres.add("especial");
+		}
+		return caracteres;
+	}
+	
+	private List<String> caracteresFaltando() {
 		List<String> caracteres = new ArrayList<String>();
-		if (!this.temDigito()) {caracteres.add("digito");};
-		if (!this.temMaiuscula()) {caracteres.add("maiuscula");};
-		if (!this.temMinuscula()) {caracteres.add("minuscula");};
-		if (!this.temCaracterEspecial()) {caracteres.add("especial");};
+		this.adicionaDigito(caracteres);
+		this.adicionaEspecial(caracteres);
+		this.adicionaMaiuscula(caracteres);
+		this.adicionaMinuscula(caracteres);
 		
 		return caracteres;
 	}
@@ -74,7 +102,7 @@ public class Senha {
 	}
 	
 
-	public int qtdMinimaCaracteres() {
+	public int qtdMinimaCaracteresNecessarios() {
 		if (this.aSenhaEhSegura()) {
 			return 0;
 		}
